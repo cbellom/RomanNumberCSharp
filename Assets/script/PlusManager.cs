@@ -14,16 +14,13 @@ public class PlusManager : MonoBehaviour {
 	}
 
 	public void plusNumbersAndParser(){
-		if (!validateNumber (firstNumber) || !validateNumber (secondNumber)) {
-			message = "Numero(s) invalido(s) debe(n) ser mayor que 0 y menor que 5000";
-		} else {
-			result = firstNumber + secondNumber;
-			
-			if(!validateNumber(result))
-				message = "La suma de los dos numeros debe ser mayor que 0 y menor que 5000";
-			else
-				message = "Numero Romano: " + parseIntToRomanNumber(result);
-		}
+		result = firstNumber + secondNumber;
+		
+		if(!validateNumber(result))
+			message = "La suma de los dos numeros debe ser mayor que 0 y menor que 4000";
+		else
+			message = "Numero Romano: " + parseIntToRomanNumber(result);
+
 		
 		print (message);
 	}
@@ -34,7 +31,7 @@ public class PlusManager : MonoBehaviour {
 	}
 
 	public bool validateNumber(int number){
-		if (number <= 0 || number >= 5000)
+		if (number <= 0 || number >= 4000)
 			return false;
 
 		return true;
